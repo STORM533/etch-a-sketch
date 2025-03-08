@@ -1,18 +1,24 @@
-
-const form = document.querySelector("#myForm");
-const btns  = document.querySelectorAll("button");
-btns.forEach((button) =>{
-    button.addEventListener("submit",() =>{
-        event.preventDefault();
-        createDiv()
-    })
-})
-function createDiv(){
-    const input  = document.querySelector("#myForm").input
+function createDivs(input) {
     const container = document.querySelector("#container");
-    for(let i = 1; i <= size; i++){
-        
-        const divs = document.createElement("div");
-        container.appendChild(divs);
+
+    for (let i = 1; i <= input; i++) {
+        const parentDiv = document.createElement("div");
+        parentDiv.classList.add("grid-vertical"); // Use class instead of ID
+        parentDiv.classList.add("grids-verticals");
+
+        for (let j = 1; j <= input; j++) {
+            const childDiv = document.createElement("div");
+            childDiv.classList.add("grid-horizontal"); // Use class instead of ID
+            childDiv.classList.add("grids-horizontals");
+            parentDiv.appendChild(childDiv);
+        }
+
+        container.appendChild(parentDiv);
     }
 }
+
+createDivs(6);
+
+
+
+ 
