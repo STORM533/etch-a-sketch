@@ -14,8 +14,25 @@ function createDivs(input) {
         container.appendChild(parentDiv);
     }
 }
+const form = document.querySelector("#myForm");
+const input = document.querySelector("#name");
 
-createDivs(6);
+    form.addEventListener("submit" , (event) => {
+        event.preventDefault();
+        const gridSize = parseInt(input.value);
+        if (!isNaN(gridSize) && gridSize > 0) {
+            createDivs(gridSize);
+            event.submitter.target = true;
+            input.disabled = true;
+            alert("refresh for more creation")
+        } else {
+            alert("Please enter a number greater than 0.");
+        }
+    });
+
+
+
+
 
 
 

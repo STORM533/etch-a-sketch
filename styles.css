@@ -1,7 +1,7 @@
 #container {
     display: flex;
     flex-wrap: wrap;
-    width:auto;
+    width:100px;
     gap: 2px;
 }
 .grids-verticals{
