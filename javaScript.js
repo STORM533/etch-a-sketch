@@ -19,10 +19,12 @@ const input = document.querySelector("#name");
 
     form.addEventListener("submit" , (event) => {
         event.preventDefault();
+        const submitButton = event.submitter;
+        submitButton.disabled = true;
         const gridSize = parseInt(input.value);
         if (!isNaN(gridSize) && gridSize > 0) {
             createDivs(gridSize);
-            event.submitter.target = true;
+            
             input.disabled = true;
             alert("refresh for more creation")
         } else {
