@@ -10,7 +10,7 @@ function randomColors(){
 function createDivs(input) {
     const container = document.querySelector("#container");
     const containerPx = 500;
-    const divPx = containerPx/(input*input);
+    const divPx = containerPx/input;
     for (let i = 1; i <= input; i++) {
         const pDiv = document.createElement("div"); 
         pDiv.classList.add("grids-verticals");
