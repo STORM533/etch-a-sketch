@@ -9,7 +9,8 @@ function randomColors(){
 
 function createDivs(input) {
     const container = document.querySelector("#container");
-
+    const containerPx = 500;
+    const divPx = containerPx/input;
     for (let i = 1; i <= input; i++) {
         const pDiv = document.createElement("div"); 
         pDiv.classList.add("grids-verticals");
@@ -17,6 +18,8 @@ function createDivs(input) {
         for (let j = 1; j <= input; j++) {
             const cDiv = document.createElement("div");
             cDiv.classList.add("grids-horizontals");
+            cDiv.style.width = `${divPx}px`;
+            cDiv.style.height = `${divPx}px`;
             cDiv.addEventListener("mouseover" , function(){
                 this.style.backgroundColor = randomColors();
             });
